@@ -1,10 +1,7 @@
 classdef FeatureExtractor
     %FeatureExtractor Abstract class for feature extractors
     
-    properties
-    end
-    
-    methods (Abstract, Static)
+    methods (Abstract)
         features = get_features(img);
     end
     
