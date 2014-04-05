@@ -12,12 +12,14 @@ function db = cbir_build_db( image_encoder, ...
     
     % naive storage solution
     db = containers.Map;
+    num_imgs = numel(images);
     
-    for i=1:numel(images)
+    for i=1:num_imgs
         
         img = vl_imreadgray(images(i).name);
         db(images(i).name) = image_encoder.encode(img);
         
+        fprintf('%d/%d \n', i, num_imgs);
     end
 end
 
